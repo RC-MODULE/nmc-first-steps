@@ -1,10 +1,7 @@
-#http_proxy        = http://user:pass@proxy:80/       (for wget usage)
-
 NEURO    = $(realpath $(ROOT))/deps/nmsdk
 MC5103   = $(realpath $(ROOT))/deps/mc5103sdk
 MC7601   = $(realpath $(ROOT))/deps/mc7601sdk
 MB7707   = $(realpath $(ROOT))/deps/mb7707sdk
-
 
 PLATFORMS   =emu6405
 PLATFORMS  += mb7707_libload
@@ -13,7 +10,7 @@ PLATFORMS  += mc5103
 PLATFORMS  += mc7601
 
 
-
+#http_proxy        = http://user:pass@proxy:80/       (only for wget usage)
   
 ifeq ($(OS),Windows_NT)
   SHELL    = cmd
@@ -26,7 +23,7 @@ ifeq ($(OS),Windows_NT)
   OS_UNZIP = powershell  -ExecutionPolicy Bypass -file $(ROOT)/unzip.ps1 
   OS_TODIR = -d
   OS_TAR   = $(OS_UNZIP)
-  PATH    := $(NEURO)/bin;$(MC5103)/bin;$(MB7707)/bin;$(MC7601)/bin;$(ROOT)/gnuwin32/bin;$(VSHELL32)/bin;$(PATH)
+  PATH    := $(NEURO)/bin;$(MC5103)/bin;$(MB7707)/bin;$(MC7601)/bin;$(ROOT)/gnuwin32/bin;
   MB7707_MAC ?= 1A-2B-3C-4D-5E-6F
 else
   OS_RM    = rm -f -r
