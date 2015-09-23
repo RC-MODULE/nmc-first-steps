@@ -2,9 +2,6 @@
 # This makefile builds simple nmc-application containing single cpp-file  
 .SUFFIXES:
 
-#ifndef MC7601
-#$(warning *** WARNING: 'MC7601' environment variable is not defined! Board SDK might not have installed correctly. )
-#endif 
 
 ROOT     = ../../../
 include $(ROOT)/environment.mk
