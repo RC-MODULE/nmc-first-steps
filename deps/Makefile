@@ -1,7 +1,6 @@
 ROOT = ..
 -include $(ROOT)/environment.mk
-#-include $(ROOT)/proxy.mk
-#http_proxy ?=http://username:password@proxy:80/
+
 
 ifeq ($(OS),Windows_NT)
   SDK_MC5103_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc5103_distrib_v_01_01_x32.zip

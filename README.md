@@ -19,7 +19,7 @@ NMC, в том числе, векторный процессор, и затем,
 **Make for Windows**. [Скачать инсталлятор](http://gnuwin32.sourceforge.net/downlinks/make.php). Домашняя страница: http://gnuwin32.sourceforge.net/packages/make.htm
 
 ## Установка GNU Core Utilities for Windows (опционально)
-В ряде случаев сборочные Makefile-скрипты используют GNU утилиты (rm,cp,rd..). Для обеспечения работоспосбности скриптов небходимо установить CoreUtils for Windows
+В ряде случаев сборочные Makefile-скрипты используют GNU утилиты (rm,cp,mkdir..). Для обеспечения работоспосбности скриптов небходимо установить CoreUtils for Windows
 либо самостоятельно с сайта http://gnuwin32.sourceforge.net/packages/coreutils.htm , либо из папки */deps* командой 
 ```bat
 make gnuwin32
@@ -60,7 +60,6 @@ make install
 ```bat
 make configure
 ```
-
 В результате данной команды для всех примеров будут сгенерированы соответствующие сборочные проекты под каждую плату, определенную в переменной PLATFOTRMS файла *environment.mk*.
 -->
 
