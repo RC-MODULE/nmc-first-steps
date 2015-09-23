@@ -44,66 +44,67 @@ clean: $(addsuffix /Makefile,$(DEMOS))
 
 del: $(addsuffix /Makefile,$(DEMOS))
 	$(foreach demo,$(DEMOS), $(MAKE) -C./$(demo) del 			$(newline))
-	$(foreach demo,$(DEMOS), cd $(demo) && $(OS_RM) Makefile 	$(newline))
-	
-	
-Step01/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step02/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
 
-Step03/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	$(foreach demo,$(DEMOS), cd $(demo) && $(OS_RM) Makefile 	$(newline))
 	
-Step03a/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
 	
-Step04/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step04a/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step05/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step06/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step06a/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step06b/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step07/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step08/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step09/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step10/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step11/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step12/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step13/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step13a/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-	
-Step14/Makefile: 
-	cp "$(ROOT)/templates/some_app/Makefile" $(@)
-
+#Step01/Makefile:
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step02/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#
+#Step03/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step03a/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step04/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step04a/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step05/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step06/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step06a/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step06b/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step07/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step08/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step09/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step10/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step11/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step12/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step13/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step13a/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#	
+#Step14/Makefile: 
+#	cp "$(ROOT)/templates/some_app/Makefile" $(@)
+#
 	
 define newline
 

@@ -14,6 +14,7 @@ PLATFORMS  += mc7601
   
 ifeq ($(OS),Windows_NT)
   SHELL    = cmd
+  OS_CP    = copy
   OS_RM    = del /Q
   OS_RD    = rd /Q /S 
   OS_WHICH =$(windir)/system32/where
@@ -23,9 +24,10 @@ ifeq ($(OS),Windows_NT)
   OS_UNZIP = powershell  -ExecutionPolicy Bypass -file $(ROOT)/unzip.ps1 
   OS_TODIR = -d
   OS_TAR   = $(OS_UNZIP)
-  PATH    := $(NEURO)/bin;$(MC5103)/bin;$(MB7707)/bin;$(MC7601)/bin;$(ROOT)/gnuwin32/bin;
+  PATH    := $(NEURO)/bin;$(MC5103)/bin;$(MB7707)/bin;$(MC7601)/bin;$(ROOT)/gnuwin32/bin;$(PATH)
   MB7707_MAC ?= 1A-2B-3C-4D-5E-6F
 else
+  OS_CP    = cp
   OS_RM    = rm -f -r
   OS_RD    = rm -d -r
   OS_WHICH = which
