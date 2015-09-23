@@ -9,15 +9,19 @@ ifeq ($(OS),Windows_NT)
   SDK_MC7601_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc7601_distrib_non_official.zip
   NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/nmsdk306en_20150611.zip
   DOWNLOADS-SDK  = $(notdir $(SDK_MB7707_URL)) $(notdir $(SDK_MC5103_URL)) $(notdir $(SDK_MC7601_URL)) $(notdir $(NMSDK_URL))
-install-sdk:  mc5103sdk mb7707sdk mc7601sdk nmsdk
+  COREUTILS_URL  = http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-bin.zip
+  COREDEPS_URL   = http://downloads.sourceforge.net/project/gnuwin32/coreutils/5.3.0/coreutils-5.3.0-dep.zip
+install-sdk: mc5103sdk mb7707sdk mc7601sdk nmsdk
+
+install-gnuwin32: gnuwin32
 
 else
   SDK_MC5103_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc5103_distrib_v_01_01.tar.gz
   SDK_MB7707_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mb7707_distrib_v_01_00.tar.gz
   NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/nmsdk.tar.gz
   DOWNLOADS-SDK  = $(notdir $(SDK_MB7707_URL)) $(notdir $(SDK_MC5103_URL))  $(notdir $(NMSDK_URL))
-install-sdk:  mc5103sdk mb7707sdk nmsdk
-  
+install-sdk: mc5103sdk mb7707sdk nmsdk
+
 endif
 
 
@@ -28,14 +32,18 @@ all: download install
 
 DOWNLOADS      = $(DOWNLOADS-LIBS) $(DOWNLOADS-SDK)
 
-
 install: install-sdk
-
 
 #------------------------- package installation  --------------------
 
+gnuwin32: 
+	$(OS_WGET)  $(COREUTILS_URL) $(COREDEPS_URL)
+	-mkdir $(@)
+	$(OS_TAR) $(notdir $(COREUTILS_URL)) $(OS_TODIR) gnuwin32
+	$(OS_TAR) $(notdir $(COREDEPS_URL))  $(OS_TODIR) gnuwin32
 
 
+	
 mc5103sdk: $(notdir $(SDK_MC5103_URL))
 	-mkdir $(@)
 	$(OS_TAR) $(<) $(OS_TODIR) $(@)

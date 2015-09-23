@@ -18,6 +18,14 @@ NMC, в том числе, векторный процессор, и затем,
 Для корректного исполнения сборочных Makefile-скриптов под Windows необходимо, чтобы был установлен
 **Make for Windows**. [Скачать инсталлятор](http://gnuwin32.sourceforge.net/downlinks/make.php). Домашняя страница: http://gnuwin32.sourceforge.net/packages/make.htm
 
+## Установка GNU Core Utilities for Windows (опционально)
+В ряде случаев сборочные Makefile-скрипты используют GNU утилиты (rm,cp,rd..). Для обеспечения работоспосбности скриптов небходимо установить CoreUtils for Windows
+либо самостоятельно с сайта http://gnuwin32.sourceforge.net/packages/coreutils.htm , либо из папки */deps* командой 
+```bat
+make gnuwin32
+```
+
+
 ##  Установка NMSDK и ПО поддержки плат
 Данный проект <nmc-first-steps> имеет несколько зависимостей от системного ПО:
 - nmsdk (SDK для сборки программ под NMC)
