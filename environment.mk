@@ -1,9 +1,9 @@
 #http_proxy        = http://user:pass@proxy:80/       (for wget usage)
 
-NEURO    ?= $(realpath $(ROOT))/deps/nmsdk
-MC5103   ?= $(realpath $(ROOT))/deps/mc5103sdk
-MC7601   ?= $(realpath $(ROOT))/deps/mc7601sdk
-MB7707   ?= $(realpath $(ROOT))/deps/mb7707sdk
+NEURO    = $(realpath $(ROOT))/deps/nmsdk
+MC5103   = $(realpath $(ROOT))/deps/mc5103sdk
+MC7601   = $(realpath $(ROOT))/deps/mc7601sdk
+MB7707   = $(realpath $(ROOT))/deps/mb7707sdk
 
 
 PLATFORMS   =emu6405
