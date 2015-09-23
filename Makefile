@@ -3,7 +3,7 @@ include environment.mk
 
 
 .DEFAULT_GOAL = all
-all: download install configure
+all: download install 
 
 download:
 	$(MAKE) -C deps download
