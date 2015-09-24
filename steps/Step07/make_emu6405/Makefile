@@ -5,7 +5,7 @@ ROOT     = ../../../
 include $(ROOT)/environment.mk
 
 INC_DIRS = -I../Include
-LIB_DIRS = 
+LIB_DIRS = -L$(NEURO)/lib
 LIBS     = libint05.lib libc05.lib
 TARGET   = main.abs
 CFG      = emu6405.cfg

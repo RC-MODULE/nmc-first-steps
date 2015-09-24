@@ -8,7 +8,7 @@ include $(ROOT)/environment.mk
 
 
 INC_DIRS = -I"$(MC7601)/include" -I../Include
-LIB_DIRS = -L"$(MC7601)/lib"
+LIB_DIRS = -L"$(MC7601)/lib" -L$(NEURO)/lib
 LIBS     = mc7601_ll_nm.lib libint_soc.lib  
 TARGET   = main.abs
 CFG      = mc7601brd.cfg

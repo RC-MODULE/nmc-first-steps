@@ -6,7 +6,7 @@ ROOT     = ../../../
 include $(ROOT)/environment.mk
 
 INC_DIRS = -I"$(MB7707)/include" -I../Include
-LIB_DIRS = -L"$(MB7707)/lib" 
+LIB_DIRS = -L"$(MB7707)/lib" -L$(NEURO)/lib
 LIBS     = mb7707lib.lib libint_soc.lib libc05.lib cppnew05.lib  
 #           ^- important that it goes first before libc05.lib
 TARGET   = main.abs

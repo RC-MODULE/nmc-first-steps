@@ -17,7 +17,7 @@ NMC, в том числе, векторный процессор, и затем,
 ## Установка Make for Windows
 Для корректного исполнения сборочных Makefile-скриптов под Windows необходимо, чтобы был установлен
 **Make for Windows**. [Скачать инсталлятор](http://gnuwin32.sourceforge.net/downlinks/make.php). Домашняя страница: http://gnuwin32.sourceforge.net/packages/make.htm  
-Необходимо, чтобы путь к установленному **make.exe** был прописан в переменной кружения **PATH**
+Необходимо, чтобы путь к установленному **make.exe** был прописан в переменной окружения **PATH**
 
 ## Установка GNU Core Utilities for Windows (опционально)
 В ряде случаев сборочные Makefile-скрипты используют GNU утилиты (rm,cp,mkdir..). Для обеспечения работоспосбности скриптов небходимо установить CoreUtils for Windows
