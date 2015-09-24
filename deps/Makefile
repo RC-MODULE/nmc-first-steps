@@ -29,7 +29,7 @@ all: download install
 
 
 
-DOWNLOADS      = $(DOWNLOADS-LIBS) $(DOWNLOADS-SDK)
+DOWNLOADS      = $(DOWNLOADS-SDK)
 
 install: install-sdk
 
