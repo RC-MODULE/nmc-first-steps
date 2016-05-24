@@ -7,15 +7,12 @@ ifndef MB7707
 $(warning*** WARNING: 'MB7707' environment variable is not defined! Board SDK might not have installed properly. )
 endif 
 
-TOP_LEVEL?=
-ifeq "$(TOP_LEVEL)" ""
-	TOP_LEVEL:=$(realpath ../../..)
-	include $(TOP_LEVEL)/steps/config.mk
-endif
+ROOT= ../../..
+include $(ROOT)/global.mk
 
 
-INC_DIRS = -I"$(MB7707)/nm/include" -I../Include
-LIB_DIRS = -L"$(MB7707)/nm/lib" 
+INC_DIRS = -I"$(MB7707)/include" -I../Include
+LIB_DIRS = -L"$(MB7707)/lib" 
 LIBS     = libint_soc.lib libc05.lib cppnew05.lib mb7707load_pc_nm.lib 
 TARGET   = main.abs
 CFG      = mb7707brd.cfg

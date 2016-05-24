@@ -2,11 +2,11 @@
 # This makefile builds simple nmc-application containing single cpp-file  
 .SUFFIXES:
 
-ROOT     = ../../../
-include $(ROOT)/environment.mk
+ROOT     = ../../..
+include $(ROOT)/global.mk
 
 INC_DIRS = -I"$(MC5103)/include" -I../Include
-LIB_DIRS = -L"$(MC5103)/lib" -L$(NEURO)/lib
+LIB_DIRS = -L"$(MC5103)/lib" -L"$(NEURO)/lib"
 LIBS     = libint05.lib  mc5103lib.lib libc05.lib
 #                         ^------- Important! it goes first before libc05.lib
 TARGET   = main.abs

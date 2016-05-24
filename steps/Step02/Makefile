@@ -32,7 +32,7 @@
 
 
 ROOT = ../..
-include $(ROOT)/environment.mk
+include $(ROOT)/global.mk
 
 all: configure
 	$(foreach platform,$(PLATFORMS), -$(MAKE) -C./make_$(platform)					$(newline))
@@ -45,7 +45,7 @@ run: configure
 
 configure: $(addsuffix /Makefile,$(addprefix make_,$(PLATFORMS)))
 	
-del:
+kill:
 	-rm -f -r make_*
 
 

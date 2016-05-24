@@ -1,11 +1,11 @@
 # BUILD AND RUN MAKEFILE
 # This makefile builds simple nmc-application containing single cpp-file  
 .SUFFIXES:
-ROOT     = ../../../
-include $(ROOT)/environment.mk
+ROOT     = ../../..
+include $(ROOT)/global.mk
 
 INC_DIRS = -I../Include
-LIB_DIRS = -L$(NEURO)/lib
+LIB_DIRS = -L"$(NEURO)/lib"
 LIBS     = libint05.lib libc05.lib
 TARGET   = main.abs
 CFG      = emu6405.cfg
