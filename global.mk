@@ -1,4 +1,4 @@
-PLATFORMS = mc5103 emu6405 mb7707_libload mb7707_edcltool
+PLATFORMS = mc5103 emu6405 mb7707_libload 
 #PLATFORMS = mc5103 emu6405 mc7601 mb7707_libload
 DEVPACK	 ?= $(realpath $(ROOT)/deps/dev-pack)
 
