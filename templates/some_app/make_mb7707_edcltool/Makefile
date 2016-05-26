@@ -11,9 +11,9 @@ ROOT= ../../..
 include $(ROOT)/global.mk
 
 
-INC_DIRS = -I"$(MB7707)/include" -I../Include
-LIB_DIRS = -L"$(MB7707)/lib" 
-LIBS     = libint_soc.lib libc05.lib cppnew05.lib mb7707load_pc_nm.lib 
+INC_DIRS = -I../Include
+LIB_DIRS = 
+LIBS     = libint_soc.lib libc05.lib cppnew05.lib 
 TARGET   = main.abs
 CFG      = mb7707brd.cfg
 SRC_CPP  = $(wildcard $(addsuffix /*.cpp,..))
@@ -29,7 +29,7 @@ run: $(TARGET)
 	edcltool -f ./run.edcl -i $(MB7707_ETH)
 
 clean:
-	-$(OS_RM) -f *.abs *.elf .*
+	-$(OS_RM) -f main.abs *.elf .*
 
 skip:
 	@echo Compilation is skipped!

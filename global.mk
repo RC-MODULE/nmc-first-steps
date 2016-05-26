@@ -1,4 +1,4 @@
-PLATFORMS = mc5103 emu6405 mb7707_libload
+PLATFORMS = mc5103 emu6405 mb7707_libload mb7707_edcltool
 #PLATFORMS = mc5103 emu6405 mc7601 mb7707_libload
 DEVPACK	 ?= $(realpath $(ROOT)/deps/dev-pack)
 
@@ -8,7 +8,7 @@ MC5103    = $(DEVPACK)/mc5103sdk
 MC7601    = $(DEVPACK)/mc7601sdk
 MB7707    = $(DEVPACK)/mb7707sdk
 GNUWIN32  = $(DEVPACK)/gnuwin32/bin
-
+EDCLTOOL  = $(DEVPACK)/edcltool-win32
 
 ifeq ($(OS),Windows_NT)
    SHELL    = cmd
@@ -29,12 +29,13 @@ ifeq ($(OS),Windows_NT)
    OS_UNZIP = powershell  -ExecutionPolicy Bypass -file $(NMPP)\deps\unzip.ps1 
    OS_TODIR = -d
    OS_UNPACK= $(OS_UNZIP)
-   PATH_DEP = 	$(realpath $(GNUWIN32));\
+   PATH_DEP = 	$(realpath $(aGNUWIN32));\
 				$(realpath $(NEURO)/bin);\
 				$(realpath $(MC5103)/bin);\
 				$(realpath $(MB7707)/bin);\
 				$(realpath $(MC7601)/bin);\
 				$(realpath $(VSHELL32)/bin);\
+				$(realpath $(EDCLTOOL));\
 				$(realpath $(DEVPACK)/gnumake/bin)
   
   export PATH    := $(PATH_DEP);$(PATH);
@@ -46,6 +47,7 @@ ifeq ($(OS),Windows_NT)
   endef
 
   MB7707_MAC ?= 1A-2B-3C-4D-5E-6F
+  MB7707_ETH = 
 else
   ARM_CC   = arm-module-linux-gnueabi-gcc 
   define OS_PATH
