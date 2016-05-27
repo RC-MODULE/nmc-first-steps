@@ -62,8 +62,6 @@ make_$(1)/Makefile:
 	-@mkdir make_$(1)
 	cp "$(ROOT)/templates/some_app/make_$(1)" ./ -r
 
-make_$(1): 
-	mkdir make_$(1)
 	
 endef
 
