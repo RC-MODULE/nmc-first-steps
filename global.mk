@@ -19,13 +19,15 @@ ifeq ($(OS),Windows_NT)
    OS_RD    = cmd /c rd /Q /S 
    OS_CP    = cp
    OS_WHICH = where
-#  OS_WGET  = wget
-   OS_WGET  = powershell  -ExecutionPolicy Bypass -file $(ROOT)\deps\wget.ps1 
-#  OS_UNZIP = unzip 
-   OS_UNZIP = powershell  -ExecutionPolicy Bypass -file $(ROOT)\deps\unzip.ps1 
+   GNU_WGET = wget -nc --no-check-certificate --content-disposition 
+   PS_WGET  = powershell  -ExecutionPolicy Bypass -file $(ROOT)\deps\wget.ps1 
+#  OS_UNZIP = 7za
+   PS_UNZIP = powershell  -ExecutionPolicy Bypass -file unzip.ps1 
+   OS_UNZIP = $(PS_UNZIP)
    OS_TODIR = -d
    OS_UNPACK= $(OS_UNZIP)
-   PATH_DEP = 	$(realpath $(GNUWIN32)/bin);\
+   PATH_DEP = 	$(realpath dev-pack-master/gnuwin32/bin);\
+				$(realpath $(GNUWIN32)/bin);\
 				$(realpath $(NEURO)/bin);\
 				$(realpath $(MC5103)/bin);\
 				$(realpath $(MB7707)/bin);\
