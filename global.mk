@@ -15,7 +15,6 @@ ifeq ($(OS),Windows_NT)
    SHELL    = cmd
    OS_MV    = cmd /c move /Y
    OS_RM    = cmd /c del /Q
-#  OS_RM    = rm -f -r
    OS_RD    = cmd /c rd /Q /S 
    OS_CP    = cp
    OS_WHICH = where
@@ -26,8 +25,7 @@ ifeq ($(OS),Windows_NT)
    OS_UNZIP = $(PS_UNZIP)
    OS_TODIR = -d
    OS_UNPACK= $(OS_UNZIP)
-   PATH_DEP = 	$(realpath dev-pack-master/gnuwin32/bin);\
-				$(realpath $(GNUWIN32)/bin);\
+   PATH_DEP = 	$(realpath $(GNUWIN32)/bin);\
 				$(realpath $(NEURO)/bin);\
 				$(realpath $(MC5103)/bin);\
 				$(realpath $(MB7707)/bin);\
@@ -37,10 +35,6 @@ ifeq ($(OS),Windows_NT)
   
   export PATH    := $(PATH_DEP);$(PATH);
   
-  define BACKSLASH
-	$(subst /,\,$(1))
-  endef
-
   MB7707_MAC ?= 1A-2B-3C-4D-5E-6F
   MB7707_ETH ?= 2
 else
