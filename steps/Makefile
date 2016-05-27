@@ -21,7 +21,6 @@
 .SUFFIXES:
 
 
-TOP_LEVEL:=$(realpath ..)
 ROOT = ..
 include $(ROOT)/global.mk
 
