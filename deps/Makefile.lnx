@@ -1,0 +1,13 @@
+else
+  SDK_MC5103_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc5103_distrib_v_01_01.tar.gz
+  SDK_MB7707_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mb7707_distrib_v_01_00.tar.gz
+  NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/nmsdk.tar.gz
+  NM_IO_URL      = http://www.module.ru/mb7707/NeuroMatrix/nm_io.zip
+  
+  NMC_URLS = \
+	  $(SDK_MC5103_URL) \
+	  $(SDK_MB7707_URL) \
+	  $(NMSDK_URL)      \
+	  $(NM_IO_URL)      
+	
+endif
