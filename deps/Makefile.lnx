@@ -1,13 +1,60 @@
-else
-  SDK_MC5103_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc5103_distrib_v_01_01.tar.gz
-  SDK_MB7707_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mb7707_distrib_v_01_00.tar.gz
-  NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/nmsdk.tar.gz
-  NM_IO_URL      = http://www.module.ru/mb7707/NeuroMatrix/nm_io.zip
+
+SDK_MC5103_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc5103_distrib_v_01_01.tar.gz
+SDK_MB7707_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mb7707_distrib_v_01_00.tar.gz
+NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/nmsdk.tar.gz
+NM_IO_URL      = http://www.module.ru/mb7707/NeuroMatrix/nm_io.zip
+
+NMC_URLS = \
+  $(SDK_MC5103_URL) \
+  $(SDK_MB7707_URL) \
+  $(NMSDK_URL)      \
+  $(NM_IO_URL)      
   
-  NMC_URLS = \
+  
+NMC_URLS = \
 	  $(SDK_MC5103_URL) \
+	  $(SDK_MC7601_URL) \
 	  $(SDK_MB7707_URL) \
 	  $(NMSDK_URL)      \
-	  $(NM_IO_URL)      
+	  $(WINPCAP_URL)	\
+	  $(EDCLTOOL_URL)	\
+	  $(NMCALC_URL)
+
+
+mc5103sdk:
+	$(OS_WGET)  $(SDK_MC5103_URL) 
+	gunzip -d $(notdir $(SDK_MC5103_URL)) 
+	tar xvzf  mc5103_distrib_v_01_01.tar 
+	-d mc5103sdk
+
+mc7601sdk:
+	$(OS_WGET)  $(SDK_MC7601_URL) 
+	$(OS_UNZIP) $(notdir $(SDK_MC7601_URL)) -d mc7601sdk
+
+mb7707sdk:
+	$(OS_WGET)  $(SDK_MB7707_URL) 
+	$(OS_WGET)  $(WINPCAP_URL)
+	$(OS_WGET)  $(EDCLTOOL_URL)
+	$(OS_UNZIP) $(notdir $(SDK_MB7707_URL)) -d mb7707sdk
+
+nmcalculator:
+	$(OS_WGET)  $(NMCALC_URL) 
+	$(OS_UNZIP) $(notdir $(NMCALC_URL))
 	
-endif
+nmsdk:
+	$(OS_WGET)  $(NMSDK_URL) 
+	$(OS_UNZIP) $(notdir $(NMSDK_URL)) -d nmsdk
+
+	
+download: 
+	$(OS_WGET)  $(NMC_URLS)
+	
+install: mc5103sdk mc7601sdk mb7707sdk nmsdk nmcalculator
+
+
+#------------------------------------------------------------------------------------	
+clean:
+	-$(OS_RM) *.zip *.exe *.tgz
+	-$(OS_RD) mc5103sdk mc7601sdk mb7707sdk nmcalculator nmsdk
+	
+	
