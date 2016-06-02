@@ -1,7 +1,9 @@
-
+include ../global.mk
 SDK_MC5103_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc5103_distrib_v_01_01.tar.gz
 SDK_MB7707_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mb7707_distrib_v_01_00.tar.gz
-NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/nmsdk.tar.gz
+SDK_MC7601_URL = http://www.module.ru/mb7707/NeuroMatrix/boards/mc7601_distrib_non_official.zip
+#NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/nmsdk.tar.gz
+NMSDK_URL      = http://www.module.ru/mb7707/toolchains-neuromatrix/module-nmc-20140702.tar.gz
 NM_IO_URL      = http://www.module.ru/mb7707/NeuroMatrix/nm_io.zip
 
 NMC_URLS = \
@@ -10,51 +12,34 @@ NMC_URLS = \
   $(NMSDK_URL)      \
   $(NM_IO_URL)      
   
-  
-NMC_URLS = \
-	  $(SDK_MC5103_URL) \
-	  $(SDK_MC7601_URL) \
-	  $(SDK_MB7707_URL) \
-	  $(NMSDK_URL)      \
-	  $(WINPCAP_URL)	\
-	  $(EDCLTOOL_URL)	\
-	  $(NMCALC_URL)
-
 
 mc5103sdk:
-	$(OS_WGET)  $(SDK_MC5103_URL) 
-	gunzip -d $(notdir $(SDK_MC5103_URL)) 
-	tar xvzf  mc5103_distrib_v_01_01.tar 
-	-d mc5103sdk
-
-mc7601sdk:
-	$(OS_WGET)  $(SDK_MC7601_URL) 
-	$(OS_UNZIP) $(notdir $(SDK_MC7601_URL)) -d mc7601sdk
+	$(OS_WGET) $(SDK_MC5103_URL) 
+	mkdir $(@)
+	tar -xvzf $(notdir $(SDK_MC5103_URL)) -C ./$(@)
 
 mb7707sdk:
-	$(OS_WGET)  $(SDK_MB7707_URL) 
-	$(OS_WGET)  $(WINPCAP_URL)
-	$(OS_WGET)  $(EDCLTOOL_URL)
-	$(OS_UNZIP) $(notdir $(SDK_MB7707_URL)) -d mb7707sdk
-
-nmcalculator:
-	$(OS_WGET)  $(NMCALC_URL) 
-	$(OS_UNZIP) $(notdir $(NMCALC_URL))
+	$(OS_WGET) $(SDK_MB7707_URL)
+	mkdir $(@)
+	tar -xvzf $(notdir $(SDK_MB7707_URL)) -C ./$(@)
 	
-nmsdk:
-	$(OS_WGET)  $(NMSDK_URL) 
-	$(OS_UNZIP) $(notdir $(NMSDK_URL)) -d nmsdk
+mc7601sdk:
+	$(OS_WGET)  $(SDK_MC7601_URL) 
+	$(OS_UNZIP) $(notdir $(SDK_MC7601_URL)) -d mc7601sdk	
 
+nmsdk:
+	$(OS_WGET) $(NMSDK_URL) 
+	tar -xvzf $(notdir $(NMSDK_URL)) -C .
 	
 download: 
-	$(OS_WGET)  $(NMC_URLS)
+	$(OS_WGET) $(SDK_MC5103_URL) $(SDK_MB7707_URL) $(NMSDK_URL) 
 	
-install: mc5103sdk mc7601sdk mb7707sdk nmsdk nmcalculator
+install: mc5103sdk mb7707sdk nmsdk 
 
 
 #------------------------------------------------------------------------------------	
 clean:
-	-$(OS_RM) *.zip *.exe *.tgz
-	-$(OS_RD) mc5103sdk mc7601sdk mb7707sdk nmcalculator nmsdk
+	-$(OS_RM) *.zip *.exe *.tgz *.gz
+	-$(OS_RD) mc5103sdk mc7601sdk mb7707sdk module-nmc
 	
 	

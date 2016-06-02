@@ -1,8 +1,5 @@
 ifeq ($(OS),Windows_NT)
-else 
-	$(MAKE) -f Makefile.lnx $(MAKECMDGOALS)
-	$(exit)
-endif
+	
 
 ROOT = ..
 -include $(ROOT)/global.mk
@@ -60,6 +57,10 @@ install: mc5103sdk mc7601sdk mb7707sdk nmsdk nmcalculator
 
 #------------------------------------------------------------------------------------	
 clean:
-	-$(OS_RM) *.zip *.exe *.tgz
+	-$(OS_RM) *.zip *.exe *.tgz *.gz
 	-$(OS_RD) mc5103sdk mc7601sdk mb7707sdk nmcalculator nmsdk
+else
+$(MAKECMDGOALS): 
+	$(MAKE) -f Makefile.lnx $(MAKECMDGOALS)
+endif
 	
