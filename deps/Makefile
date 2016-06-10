@@ -17,14 +17,16 @@ WINPCAP_URL        = https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe
 EDCLTOOL_URL       = http://www.module.ru/mb7707/edcltool-bin/edcltool-20042015-win32.tgz
   
 NMC_URLS = \
-	  $(SDK_MC5103_URL) \
-	  $(SDK_MC7601_URL) \
-	  $(SDK_MB7707_URL) \
-	  $(NMSDK_URL)      \
-	  $(WINPCAP_URL)	\
-	  $(EDCLTOOL_URL)	\
-	  $(NMCALC_URL)
-
+	$(SDK_MC5103_URL) \
+	$(SDK_MC7601_URL) \
+	$(SDK_MB7707_URL) \
+	$(NMSDK_URL)      \
+	$(WINPCAP_URL)	\
+	$(EDCLTOOL_URL)	\
+	$(NMCALC_URL)
+nmsdk:
+	$(OS_WGET)  $(NMSDK_URL) 
+	$(OS_UNZIP) $(notdir $(NMSDK_URL)) -d nmsdk
 
 mc5103sdk:
 	$(OS_WGET)  $(SDK_MC5103_URL) 
@@ -44,9 +46,7 @@ nmcalculator:
 	$(OS_WGET)  $(NMCALC_URL) 
 	$(OS_UNZIP) $(notdir $(NMCALC_URL))
 	
-nmsdk:
-	$(OS_WGET)  $(NMSDK_URL) 
-	$(OS_UNZIP) $(notdir $(NMSDK_URL)) -d nmsdk
+
 
 	
 download: 
@@ -59,6 +59,7 @@ install: mc5103sdk mc7601sdk mb7707sdk nmsdk nmcalculator
 clean:
 	-$(OS_RM) *.zip *.exe *.tgz *.gz
 	-$(OS_RD) mc5103sdk mc7601sdk mb7707sdk nmcalculator nmsdk
+
 else
 $(MAKECMDGOALS): 
 	$(MAKE) -f Makefile.lnx $(MAKECMDGOALS)
