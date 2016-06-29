@@ -1,4 +1,5 @@
-PLATFORMS = mc5103 emu6405 mb7707_libload mc7601
+PLATFORMS = mc5103 emu6405 mb7707_libload 
+#mc7601
 #PLATFORMS ????= mc5103 emu6405 mc7601 mb7707_libload
 
 
