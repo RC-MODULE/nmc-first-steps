@@ -45,8 +45,8 @@
 
 Скачать и установить в папку /deps/ все необходимые компоненты можно выполнив команду из папки deps:
 ```bat
-make download
-make install
+\nmc-first-steps\deps> make download
+\nmc-first-steps\deps> make install
 ```
 
 
@@ -75,15 +75,15 @@ make configure
 ## Сборка и запуск
 Сборка проекта осуществляется командой из соответствующей папки с примером:
 ```mak
- make 
+\nmc-first-steps\steps\Step01\make_emu6405> make 
 ```
 
 Запуск приложения осуществляется командой:
 ```mak
- make run
+\nmc-first-steps\steps\Step01\make_emu6405> make run
 ```
 
 ## Документация 
 Описания шагов находится в папке */doc*  
 
-Документация по архитектуре NeuroMatrix и программированию находится в папке */deps/dev-pack-master/nmsdk/doc*
+<!-- Документация по архитектуре NeuroMatrix и программированию находится в папке */deps/dev-pack-master/nmsdk/doc* -->
