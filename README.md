@@ -23,10 +23,13 @@
 
 ## Требования системного ПО (Для ОС Windows)
 Должны быть установлены и доступны через %PATH%  следующие [GnuWin32](http://gnuwin32.sourceforge.net/) утилиты:
-  - make (3.81)
+  - make (3.81) 
   - unzip
   - wget 
   - cp
+
+> После установки рекомендуется удостовериться , что ```make.exe``` вызывается из установленной директории с помощью команды ```where make``` ,
+а версия ```make``` соответсвествует 3.81 с помощью команды ```make -ver```
 
 Рекомендуется установить необходимые утилиты с помощью online-инсталлятора [GnuWin32-Lite](https://github.com/RC-MODULE/gnuwin32-lite/archive/master.zip) с сайта https://github.com/RC-MODULE/gnuwin32-lite/
 либо произвести полную установку всех GnuWin32 утилит (~600MB) с помощью инсталлятора GetGnuwWin32 c сайта https://sourceforge.net/projects/getgnuwin32/
