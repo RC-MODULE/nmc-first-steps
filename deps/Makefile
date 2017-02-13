@@ -55,11 +55,11 @@ nmcalculator:
 	
 #install: mc5103sdk mc7601sdk mb7707sdk nmsdk nmcalculator
 download:
-	$(OS_WGET)  https://github.com/RC-MODULE/dev-pack/archive/master.zip
+	$(OS_WGET)  https://github.com/RC-MODULE/dev-kit/archive/master.zip
 
-install: dev-pack-master.zip
-	$(OS_UNZIP) dev-pack-master.zip
-	$(MAKE) -C dev-pack-master install-nmc
+install: dev-kit-master.zip
+	$(OS_UNZIP) dev-kit-master.zip
+	$(MAKE) -C dev-kit-master install-nmc
 	
 
 #------------------------------------------------------------------------------------	
