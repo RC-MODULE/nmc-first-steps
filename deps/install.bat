@@ -10,9 +10,10 @@ set "psCommand=powershell -Command "$pword = read-host 'Enter Password' -AsSecur
     $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword); ^
         [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)""
 for /f "usebackq delims=" %%p in (`%psCommand%`) do set password=%%p
-set http_proxy=http://%login%:%password%@%proxy
-set https_proxy=https://%login%:%password%@%proxy
+set http_proxy=http://%login%:%password%@%proxy%
+set https_proxy=https://%login%:%password%@%proxy%
 
 :start
 
 make download
+make install

@@ -2,15 +2,14 @@ PLATFORMS = mc5103 emu6405 mb7707_libload
 #mc7601
 #PLATFORMS ????= mc5103 emu6405 mc7601 mb7707_libload
 
-
-export MC5103    ?= $(ROOT)/deps/mc5103sdk
-export MC7601    ?= $(ROOT)/deps/mc7601sdk
-export MB7707    ?= $(ROOT)/deps/mb7707sdk
-export EDCLTOOL  = $(ROOT)/deps/edcltool-win32
+export  DEVKIT    ?=$(ROOT)/deps/dev-kit-master
+export  NEURO     ?=$(DEVKIT)/nmsdk
+export  VSHELL32  ?=$(DEVKIT)/vshell32
+export  MC5103    ?=$(DEVKIT)/mc5103sdk
+export  MB7707    ?=$(DEVKIT)/mb7707sdk
+export  NM_IO     ?=$(DEVKIT)/nm_io
 
 ifeq ($(OS),Windows_NT)
-   export NEURO     ?= $(ROOT)/deps/nmsdk
-   
    SHELL    = cmd
    OS_MV    = cmd /c move /Y
    OS_RM    = cmd /c del /Q
