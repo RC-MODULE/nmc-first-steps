@@ -12,7 +12,7 @@ install: dev-kit-master.zip
 
 clean:
 	-$(OS_RM) *.zip *.exe *.tgz *.gz
-	-$(OS_RD) mc5103sdk mc7601sdk mb7707sdk nmcalculator nmsdk
+	-$(OS_RD) dev-kit-master mc5103sdk mc7601sdk mb7707sdk nmcalculator nmsdk
 
 else
 $(MAKECMDGOALS): 
