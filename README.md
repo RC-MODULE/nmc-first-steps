@@ -24,7 +24,7 @@
 Для работы с эмулятором достаточно установленного [Neuro Matrix SDK](https://www.module.ru/mb7707/toolchains-neuromatrix/NM%20SDK%203.07%20RU.EXE) .
 
 Сборка осуществляется с помощью bat-файлов, которые также продублированы сборочными скриптами Makefile. 
-Для сборки и запуска проектов рекомендуется использовать [make v3.81] (http://gnuwin32.sourceforge.net/packages/make.htm).
+Для сборки и запуска проектов рекомендуется использовать [make v3.81](http://gnuwin32.sourceforge.net/packages/make.htm).
 > Полный комплект GnuWin32 утилит можно также установить с помощью online-инсталлятора [GnuWin32-Lite](https://github.com/RC-MODULE/gnuwin32-lite) 
 
 > Для упрощения освоения архитектуры NeuroMatrix, а также для облегчения конфигурирования процессора рекомендуются использовать специальный [калькулятор](http://www.module.ru/mb7707/NeuroMatrix/nmcalculator.zip )
