@@ -8,7 +8,9 @@ own Loop: label;
 	if > delayed goto Loop with gr1--;
 	gr2, ar2 = [Arg1++];	
 	[Arg2++] = ar2, gr2;	
-end  AAA;	macro Push_Pop (Arg1)
+end  AAA;	
+
+macro Push_Pop (Arg1)
 .if Arg1 xor 1;	// начало блока услованой компил€ции
     push ar0, gr0;	
     push ar1, gr1;	

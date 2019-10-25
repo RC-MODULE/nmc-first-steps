@@ -6,6 +6,7 @@ end ".my_data";
 begin ".text"	
 <_Mask>	
     ar5 = ar7 - 2;    // сохраняется указатель стека
+	
     push ar0, gr0;    // в стеке сохраняются регистровые пары
     push ar1, gr1;	
     push ar2, gr2;	

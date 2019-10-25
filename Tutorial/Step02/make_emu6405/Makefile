@@ -22,6 +22,6 @@ run: $(TARGET)
 	nm6405emurun ./$(TARGET) 
 
 clean:
-	-$(OS_RM) -f *.abs *.elf .*
+	-$(OS_RM) -f *.abs *.elf .* *.map
 
 

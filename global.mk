@@ -1,4 +1,4 @@
-PLATFORMS = emu6403 emu6405 mc5103 mb7707 mc7601
+PLATFORMS = emu6403 emu6405 mc5103 mb7707 mc7601 mc12101_nmpu1-gcc-cfg mc12101_nmpu1-gcc-ld
 #PLATFORMS ????= mc5103 emu6405 mc7601 mb7707_libload
 
 export  DEVKIT    ?=$(ROOT)/deps/dev-kit-master
