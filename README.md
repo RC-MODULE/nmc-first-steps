@@ -82,5 +82,5 @@
 Описания шагов находится в папке */doc*  
 
 Для упрощения освоения архитектуры NeuroMatrix, а также для облегчения конфигурирования процессора рекомендуются использовать специальный nmcalculator из дистрибутива [nmkit](https://www.module.ru/mb7707/NeuroMatrix/nmkit.exe)
-![nmcalculator](/doc/nmclac.png?raw=true)
+![nmcalculator](/doc/nmcalc.png?raw=true)
 <!-- Документация по архитектуре NeuroMatrix и программированию находится в папке */deps/dev-pack-master/nmsdk/doc* -->
