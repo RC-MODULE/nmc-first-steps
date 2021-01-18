@@ -1,4 +1,4 @@
-// функци€ ReverseBits объ€влена внешней с —и-св€зыванием
+// функция ReverseBits объявлена внешней с —и-связыванием
 extern "C" long ReverseBits(long Src);
 
 int main()

@@ -1,8 +1,8 @@
 global __main: label;	
 	
 data ".MyData"	
-	global A: long[16] = (	0l, 1l, 2l, 3l, 4l, 5hl, 6l, 7l,
-	8l, 9l, 10l, 0Bhl, 0Chl, 13l, 14l, 15l );
+	global A: long[16] = (	0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+	8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L );
 end ".MyData";	
 	
 nobits ".MyData1"	

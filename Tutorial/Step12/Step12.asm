@@ -2,7 +2,7 @@ global _AddBias :label;
 	
 data ".data"	
 	// веса для матрицы, единичная диагональ, данные проходят без изменений
-	Weights: long[4] = ( 1l, 1l<<16, 1l<<32, 1l<<48 );
+	Weights: long[4] = ( 1L, 1L<<16, 1L<<32, 1L<<48 );
 end ".data";	
 	
 begin ".textAAA"	
